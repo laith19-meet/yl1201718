@@ -1,0 +1,10 @@
+import turtle
+turtle.begin_fill()
+turtle.goto(0,20)
+turtle.goto(20,20)
+turtle.goto(20,0)
+turtle.goto(0,0)
+turtle.goto(10,-20)
+turtle.goto(20,0)
+turtle.end_fill()
+turtle.mainloop()
