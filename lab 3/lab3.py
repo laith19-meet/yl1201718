@@ -13,3 +13,4 @@ turtle.goto(-50,0)
 turtle.register_shape("pic.gif")
 turtle.shape("pic.gif")
 turtle.mainloop()
+Z
