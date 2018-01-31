@@ -13,7 +13,7 @@ right_side_ball = 0
 left_side_ball = 0
 up_side_ball = 0
 down_side_ball = 0
-class Ball(Turtle):
+class Circle(Turtle):
 	def __init__(self,x,y,dx,dy,radius,color):
 		Turtle.__init__(self)
 		self.pu()
@@ -44,20 +44,27 @@ class Ball(Turtle):
 		global left_side_ball
 		global up_side_ball
 		global down_side_ball
-		right_side_ball= new_x + self.radius
-		left_side_ball = new_x - self.radius
-		up_side_ball = new_y + self.radius
-		down_side_ball = new_y- self.radius
+		right_side_ball= new_x + new_y/2
+		left_side_ball = new_x - new_y/2
+		up_side_ball = new_y + new_x/2
+		down_side_ball = new_y + new_x/2
 		self.goto(new_x,new_y)
-		if new_x == right_side_ball:
-			self.dx = -self.dx
+#pd()
+circle1 = Circle(20,0 ,.3,.2,20,"red")
+circle2 = Circle(-100,0,0.1, 0.2,20,"blue")
+circle1.move(SCREEN_WIDTH,SCREEN_HIGHT)
+while True :
+	circle1.move(SCREEN_WIDTH,SCREEN_HIGHT)
+	circle2.move(SCREEN_WIDTH,SCREEN_HIGHT)
+	getscreen().update()
+	time.sleep(0.01)
 
-		if new_x == left_side_ball:
-			self.dx = -self.dx
+if circle1.pos() <= SCREEN_HIGHT:
+	circle1.move(-.3,-.2)
+if circle1.pos() <= SCREEN_WIDTH:
+	circle1.move(.3,.2)
 
-		if new_y == up_side_ball:
-			self.dy = -self.dy
+mainloop()
 
-		if new_y == down_side_ball:
-			self.dy = -self.dy		
+
 
